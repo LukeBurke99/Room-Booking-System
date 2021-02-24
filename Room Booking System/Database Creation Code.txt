@@ -1,0 +1,98 @@
+﻿CREATE DATABASE `roombookingsystem` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE TABLE `booking` (
+  `BookingID` char(6) NOT NULL,
+  `CustomerID` char(6) DEFAULT NULL,
+  `EmployeeID` char(6) DEFAULT NULL,
+  `RoomID` char(6) DEFAULT NULL,
+  `BookingTitle` varchar(45) DEFAULT NULL,
+  `GroupName` varchar(45) DEFAULT NULL,
+  `LecturerName` varchar(80) DEFAULT NULL,
+  `TelephoneNumber` char(11) DEFAULT NULL,
+  `Date` date DEFAULT NULL,
+  `StartTime` time DEFAULT NULL,
+  `EndTime` time DEFAULT NULL,
+  `NumberOfPeople` int(11) DEFAULT NULL,
+  `NumberOfCars` int(11) DEFAULT NULL,
+  `TotalPrice` float DEFAULT NULL,
+  `SecurityRequired` bit(1) DEFAULT NULL,
+  `SmartScreenRequired` bit(1) DEFAULT NULL,
+  `Confirmed` bit(1) DEFAULT NULL,
+  `ConfirmationDate` datetime DEFAULT NULL,
+  `Notes` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`BookingID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `customer` (
+  `CustomerID` char(6) NOT NULL,
+  `FirstName` varchar(30) DEFAULT NULL,
+  `Surname` varchar(40) DEFAULT NULL,
+  `Address` varchar(60) DEFAULT NULL,
+  `Postcode` varchar(10) DEFAULT NULL,
+  `TelephoneNumber` varchar(11) DEFAULT NULL,
+  `EmailAddress` varchar(254) DEFAULT NULL,
+  `Notes` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`CustomerID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `employee` (
+  `EmployeeID` char(6) NOT NULL,
+  `FirstName` varchar(30) DEFAULT NULL,
+  `Surname` varchar(40) DEFAULT NULL,
+  `Address` varchar(60) DEFAULT NULL,
+  `Postcode` varchar(10) DEFAULT NULL,
+  `TelephoneNumber` varchar(11) DEFAULT NULL,
+  `EmailAddress` varchar(254) DEFAULT NULL,
+  `StartDate` date DEFAULT NULL,
+  `EndDate` date DEFAULT NULL,
+  `Notes` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`EmployeeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `equipment` (
+  `EquipmentID` char(6) NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Price` float DEFAULT NULL,
+  `Notes` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`EquipmentID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `equipmentoption` (
+  `EquipmentID` char(6) NOT NULL,
+  `BookingID` char(6) DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Price` float DEFAULT NULL,
+  PRIMARY KEY (`EquipmentID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `food` (
+  `FoodID` char(6) NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
+  `Description` varchar(150) DEFAULT NULL,
+  `Price` float DEFAULT NULL,
+  `Notes` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`FoodID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `foodoption` (
+  `FoodID` char(6) NOT NULL,
+  `BookingID` char(6) DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Price` float DEFAULT NULL,
+  PRIMARY KEY (`FoodID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `room` (
+  `RoomID` char(6) NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
+  `Description` varchar(150) DEFAULT NULL,
+  `Floor` int(11) DEFAULT NULL,
+  `HourlyRate` float DEFAULT NULL,
+  `FullDayPriceWD` float DEFAULT NULL,
+  `FullDayPriceWE` float DEFAULT NULL,
+  `MaxCapacity` int(11) DEFAULT NULL,
+  `ScreenSize` char(1) DEFAULT NULL,
+  `Notes` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`RoomID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
