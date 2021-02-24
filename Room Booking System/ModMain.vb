@@ -121,8 +121,8 @@ Module ModMain
         Try
             Dim DatabaseConnection As New MySqlConnection(ConnString)
             DatabaseConnection.Open()
-            Return True
             DatabaseConnection.Close()
+            Return True
         Catch ex As MySqlException
             MsgBox(ex.Message.ToString)
         End Try
