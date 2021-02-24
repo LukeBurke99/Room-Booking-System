@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7768075-3BFC-486C-A81F-DF6803845CF2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Room_Booking_System.My.MyApplication</StartupObject>
+    <RootNamespace>Room_Booking_System</RootNamespace>
+    <AssemblyName>Room Booking System</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Room Booking System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Room Booking System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\clsBooking.vb" />
+    <Compile Include="ADD forms\frmAddCatering.Designer.vb">
+      <DependentUpon>frmAddCatering.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADD forms\frmAddCatering.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD forms\frmAddClient.Designer.vb">
+      <DependentUpon>frmAddClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADD forms\frmAddClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD forms\frmAddEmployee.Designer.vb">
+      <DependentUpon>frmAddEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADD forms\frmAddEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD forms\frmAddEquipment.Designer.vb">
+      <DependentUpon>frmAddEquipment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADD forms\frmAddEquipment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD forms\frmAddRoom.Designer.vb">
+      <DependentUpon>frmAddRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADD forms\frmAddRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\clsCustomer.vb" />
+    <Compile Include="Classes\clsEmployee.vb" />
+    <Compile Include="Classes\clsEquipment.vb" />
+    <Compile Include="Classes\clsEquipmentOption.vb" />
+    <Compile Include="Classes\clsFood.vb" />
+    <Compile Include="Classes\clsFoodOption.vb" />
+    <Compile Include="Classes\clsRoom.vb" />
+    <Compile Include="MAIN forms\frmCateringDetails.Designer.vb">
+      <DependentUpon>frmCateringDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN forms\frmCateringDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN forms\frmClientDetails.Designer.vb">
+      <DependentUpon>frmClientDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN forms\frmClientDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN forms\frmEmployeeDetails.Designer.vb">
+      <DependentUpon>frmEmployeeDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN forms\frmEmployeeDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN forms\frmEquipmentDetails.Designer.vb">
+      <DependentUpon>frmEquipmentDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN forms\frmEquipmentDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other forms\frmHelp.Designer.vb">
+      <DependentUpon>frmHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other forms\frmHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other forms\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other forms\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN forms\frmMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN forms\frmMainMenu.Designer.vb">
+      <DependentUpon>frmMainMenu.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD forms\frmBookingMenu.Designer.vb">
+      <DependentUpon>frmBookingMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADD forms\frmBookingMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN forms\frmRoomDetails.Designer.vb">
+      <DependentUpon>frmRoomDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN forms\frmRoomDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN forms\frmScheduledBookings.Designer.vb">
+      <DependentUpon>frmScheduledBookings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN forms\frmScheduledBookings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModMain.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Other forms\frmOptimisedRoom.Designer.vb">
+      <DependentUpon>frmOptimisedRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other forms\frmOptimisedRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ADD forms\frmAddCatering.resx">
+      <DependentUpon>frmAddCatering.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD forms\frmAddClient.resx">
+      <DependentUpon>frmAddClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD forms\frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD forms\frmAddEquipment.resx">
+      <DependentUpon>frmAddEquipment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD forms\frmAddRoom.resx">
+      <DependentUpon>frmAddRoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN forms\frmCateringDetails.resx">
+      <DependentUpon>frmCateringDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN forms\frmClientDetails.resx">
+      <DependentUpon>frmClientDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN forms\frmEmployeeDetails.resx">
+      <DependentUpon>frmEmployeeDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN forms\frmEquipmentDetails.resx">
+      <DependentUpon>frmEquipmentDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other forms\frmHelp.resx">
+      <DependentUpon>frmHelp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other forms\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN forms\frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD forms\frmBookingMenu.resx">
+      <DependentUpon>frmBookingMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN forms\frmRoomDetails.resx">
+      <DependentUpon>frmRoomDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN forms\frmScheduledBookings.resx">
+      <DependentUpon>frmScheduledBookings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other forms\frmOptimisedRoom.resx">
+      <DependentUpon>frmOptimisedRoom.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
