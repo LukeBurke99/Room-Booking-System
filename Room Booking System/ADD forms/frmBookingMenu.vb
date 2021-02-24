@@ -111,7 +111,7 @@ Public Class frmBookingMenu
 
 
 
-                    If Connect_to_database() Then
+                    If CheckConnection() Then
                         ' loop through each item in the food grid and add them to FoodOptions table 
                         FoodOptionClass.GetSetBookingID = lblBookingID.Text
                         For i = 0 To (gridSelectedFood.Rows().Count() - 1)

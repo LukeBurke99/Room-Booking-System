@@ -1,9 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Module ModMain
 
-    Public ConnString As String = "server=10.2.1.26;userid=Y6701;password=RAOKVE;database=BookingFormY6701"
-
-
+    Public ConnString As String = "server=localhost;userid=root;password=;database=RoomBookingSystem"
 
     ''''''''''''''''''''''''''''''''''''''''''''''''
     Public GlobalID As String = "000000"
@@ -117,7 +115,11 @@ Module ModMain
         Return CInt(LastID)
     End Function
 
-    Public Function Connect_to_database() As Boolean
+    ''' <summary>
+    ''' Check whether the database can be connected to
+    ''' </summary>
+    ''' <returns>True if the connection was successful</returns>
+    Public Function CheckConnection() As Boolean
         Try
             Dim DatabaseConnection As New MySqlConnection(ConnString)
             DatabaseConnection.Open()
